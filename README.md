@@ -20,10 +20,10 @@ The **Fundraiser** platform represents a sophisticated application of blockchain
 - Virtual environment for dependency management
 
 ### Deployment Instructions
-1. **Clone the Repository**
-   ```sh
-   git clone https://github.com/RavikanthK-2003/Fundraiser.git
-   cd Fundraiser
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/bhaskara-venkata-krishshnareddy/Fundraiser-Django-project.git
+   cd Fundraiser-Django-project
    ```
 
 2. **Create and Activate Virtual Environment**
@@ -76,5 +76,6 @@ This project is open to collaborative development. Researchers, developers, and 
 This project is distributed under the MIT License, ensuring open-source availability while maintaining compliance with blockchain governance frameworks.
 
 ## Contact and Further Inquiry
-For inquiries, contributions, or collaborative research proposals, please contact [RavikanthK](https://github.com/RavikanthK-2003).
+For inquiries, contributions, or collaborative research proposals, please contact [krishshnareddy](https://github.com/bhaskara-venkata-krishshnareddy).
+
 
