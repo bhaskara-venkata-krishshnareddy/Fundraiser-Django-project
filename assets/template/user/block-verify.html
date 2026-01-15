@@ -1,0 +1,529 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>FundRaiser</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{% static 'admin/images/icon5.png' %}" />
+
+    <link href="https://fonts.googleapis.com/css?family=Mansalva|Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'user/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'user/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'user/fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/demo.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/demo3.css' %}">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <script src="{% static 'user/js/payment_reg.js' %}"></script> -->
+    <script src="{% static 'user/js/payment_reg.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'user/css/preloader.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+
+  </head>
+
+  <body runat="server" data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <div class="demo-content">
+
+
+      <div id="loader-wrapper">
+
+          <div class="entry-header d-flex justify-content-center">
+            
+                <h1 class="entry-title" style="color: white;position: relative;">Verifying Using Blockchain</h1>
+
+          
+              <!-- <h1 class="entry-title" style="color: white;position:fixed;margin: 150px;margin-left: 300px;">Verifying Using Blockchain</h1> -->
+          </div>
+
+          <div id="loader"></div>
+
+          <div class="loader-section section-left"></div>
+          <div class="loader-section section-right"></div>
+
+      </div>
+     
+  </div>
+    <div class="site-wrap" id="home-section">
+
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+
+      
+      
+      
+      <div class="bg-primary py-3 top-bar shadow d-none d-md-block">
+        <div class="container">
+          <div class="row" >
+            <div class="col-md-6 text-md-left pl-0 ">
+              <a href="#" class="p-3"><span class="icon-twitter"></span></a>
+              <a href="#" class="p-3"><span class="icon-facebook"></span></a>
+            </div>
+             <div class="col-md-6 text-md-right ">
+                <a href="{% url 'home2' %}"  class="btn btn-dark ;">Home</a>
+                
+                <!-- <a href="{% url 'livehood' %}"  class="btn btn-dark ;">Livehood</a>
+                <a href="{% url 'education' %}"  class="btn btn-dark ;">Education</a>
+                <a href="{% url 'contact' %}"  class="btn btn-dark ;">Contact</a> -->
+              <a href="{% url 'admin_login' %}" type="button" class="btn btn-dark ;">Admin</a>
+              <a href="{% url 'login' %}" type="button" class="btn btn-dark ; " style="width:80px">user</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      
+    </div>
+
+    </div>
+    
+    <div class="section">
+			<!-- container -->
+			<div class="container">
+        <div class="row">
+            <div class="col-lg-8 justify-content-center">
+                
+                <h2>Verified Using Blockchain <span>{% if status == 'true' %}<i class="fa fa-check" style="color: green;"></i>{% else %}<i class="fa fa-ban" style="color: red;"></i>{% endif %}</span></h2>
+                {% if status == 'true' %}
+                <div class="row mt-5">
+                     <div class="col-lg-12 mb-3">
+                        <div class="row">
+                            <div class="col-lg-2 mt-3">
+                                Block 1: 
+                            </div>
+                            <div class="col-lg-10">
+                                <textarea readonly name="" id=""  class="form-control">{{block1}}</textarea>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-12 mb-3">
+                        <div class="row">
+                            <div class="col-lg-2 mt-3">
+                                Block 2: 
+                            </div>
+                            <div class="col-lg-10">
+                                <textarea readonly name="" id=""  class="form-control">{{block2}}</textarea>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-12 mb-3">
+                        <div class="row">
+                            <div class="col-lg-2 mt-3">
+                                Block 3: 
+                            </div>
+                            <div class="col-lg-10">
+                                <textarea readonly name="" id=""  class="form-control">{{block3}}</textarea>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                {% else %}
+                <div class="row mt-5">
+                    <div class="col-lg-12 mb-3">
+                       <div class="row">
+                           <div class="col-lg-2 mt-3">
+                               Block 1: 
+                           </div>
+                           <div class="col-lg-10">
+                               <textarea readonly name="" id=""  class="form-control">{{block1}}</textarea>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="col-lg-12 mb-3">
+                       <div class="row">
+                           <div class="col-lg-2 mt-3">
+                               Block 2: 
+                           </div>
+                           <div class="col-lg-10">
+                               <textarea readonly name="" id=""  class="form-control">{{block2}}</textarea>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="col-lg-12 mb-3">
+                       <div class="row">
+                           <div class="col-lg-2 mt-3">
+                               Block 3: 
+                           </div>
+                           <div class="col-lg-10">
+                               <textarea readonly name="" id=""  class="form-control">{{block3}}</textarea>
+                           </div>
+                       </div>
+                    </div>
+               </div>
+                {% endif %}
+                <!-- <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                        <th scope="col">Block 1</th>
+                        <th scope="col">Block 1 : <textarea readonly class="form-control">{{block1}}</textarea></th>
+                      </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                        <th scope="col">Block 2</th>
+                        <th scope="col"><textarea readonly class="form-control">{{block2}}</textarea></th>
+                      </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                        <th scope="col">Block 3</th>
+                        <th scope="col"><textarea readonly class="form-control">{{block3}}</textarea></th>
+                      </tr>
+                    </thead>
+                    
+                  </table> -->
+            </div>
+            <div class="col-lg-3 justify-content-center">
+                <h2 style="text-underline-offset: 2;">Continue To Donation Page</h2>
+                <div class="mt-5">
+
+                {% if status == 'true' %}
+                <a  href="{% url 'donateaction' data.fund_id %}"type="button" class="btn btn-primary btn-md d-flex justify-content-center">Donate</a>
+                {% else %}
+                <h2 style="color: red;">This Data has been Tampered and Donations are not allowed at this time.</h2>
+                {% endif %}
+            </div>
+            </div>
+        </div>
+
+    </div>
+   
+    
+    
+
+    {% if messages %} 
+    {% for message in messages %} 
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <script>
+      swal({
+        title: "Error :(",
+        text: "{{message}}",
+        icon: "error",
+        button: "OK",
+      });
+    </script>
+    {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <script>
+      swal({
+        title: "Success :)",
+        text: "{{message}}",
+        icon: "success",
+        button: "OK",
+      });
+    </script>
+    
+    {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+    <script>
+      swal({
+        title: "Info :(",
+        text: "{{message}}",
+        icon: "info",
+        button: "OK",
+      });
+    </script>
+    
+    {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+    <script>
+      swal({
+        title: "Warning :(",
+        text: "{{message}}",
+        icon: "warning",
+        button: "OK",
+      });
+    </script>
+    
+    {% endif %} 
+    {% endfor %} 
+    {% endif %}
+   
+    
+    <footer class="site-footer bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-7">
+                <h2 class="footer-heading mb-4">About Us</h2>
+               <p>The pain itself is a lot of pain, it's enhanced. That sort of thing, let him seek for his labors;</p>
+
+
+              </div>
+             <div class="col-md-4 ml-auto">
+                <h2 class="footer-heading mb-4">Features</h2>
+                <ul class="list-unstyled">
+                  <li><a href="{% url 'about' %}">About Us</a></li>
+                  <li><a href="{% url 'health' %}">Health</a></li>
+                  <li><a href="{% url 'livehood' %}">Livehood</a></li>
+                  <li><a href="{% url 'education' %}">Education</a></li>
+                  <li><a href="{% url 'contact'%}">Contact Us</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4 ml-auto">
+
+            <div class="mb-5">
+              <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
+              <form action="#" method="post" class="footer-suscribe-form">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control rounded-0 border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Subscribe</button>
+                  </div>
+                </div>
+            </div>
+
+
+            <h2 class="footer-heading mb-4">Follow Us</h2>
+            <a href="#about-section" class="smoothscroll pl-0 pr-3"><span class="icon-facebook"></span></a>
+            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+            </form>
+          </div>
+        </div>
+       
+      </div>
+    </footer>
+
+    </div>
+
+    <script src="{% static 'user/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'user/js/popper.min.js' %}"></script>
+    <script src="{% static 'user/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'user/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.fancybox.min.js'%}"></script>
+    <script src="{% static 'user/js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'user/js/aos.js' %}"></script>
+    <script src="{% static 'user/js/demo.js' %}"></script>
+    <script src="{% static 'user/js/main.js' %}"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+    setTimeout(function(){
+      $('body').addClass('loaded');
+    }, 3000);
+  });
+    </script>
+    <script type="text/javascript">
+      function validation(){
+          var name = document.myform.first_name;
+          var email = document.myform.Email_1;
+
+         
+          
+          
+          
+          let phoneNum = document.myform.tel;
+          let start = document.getElementById.sdate;
+          let expiary = document.getElementById.expdate;
+          let cvv = document.getElementById.cvv2;
+          let debit = document.getElementById.debit;
+          let d_name = document.getElementById.h_name;
+      
+
+          let start2 = document.myform.sdate2
+          let expiary2 = document.myform.expdate2
+          let cvv2 = document.myform.cvv
+          let credit = document.myform.credit
+          let c_name = document.myform.h_name2
+
+          let s_bank = document.myform.select_bank
+          let p_user = document.myform.u_name
+          let p_password = document.myform.p_password
+          let c_amount = document.myform.ca
+          let d_amount = document.myform.da
+
+          
+          let feedback_name = document.myform.country;
+          var confirmpassword =document.myform.confirmpassword
+          var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+          var letter = /[a-z]/;
+          var upper = /[A-Z]/;
+          var number = /[0-9]/;
+           
+         
+          if(feedback_name.value.length <= 0){
+
+            alert("Please Enter Your Countryname:");
+            feedback_name.focus();
+            return false;
+        } 
+          if(name.value.length <= 0){
+
+          alert("Please Enter Your Name:");
+          feedback_name.focus();
+          return false;
+        }
+
+      
+      
+
+
+        if(email.value.length <= 0){
+          alert( 'Please Your Email: ');
+          email.focus();
+          return false;
+        } 
+
+        if(!email.value.match(mailformat)){
+          alert( 'Please Your Email: ');
+          email.focus();
+          return false;
+        }  
+
+
+        if (phoneNum.value.length != 10) {
+
+          alert("please Enter valid mobile number"); 
+          return false;
+            
+        }
+    
+        if (phoneNum.value.length <= 0) {
+    
+          alert("Please Enter Mobile Number");
+          return false;
+        }
+        
+        if(expiary2.value=='' || expiary2.value.length <=2){
+
+          alert("  expiary should be less than 2 digits" );
+          return false;
+        }
+        if(credit.value=='' || credit.value.length <=15){
+          alert("  credit should be less than 15 digits" );
+          return false;
+        }
+      
+        if(cvv2.value=='' || cvv2.value.length <=4){
+          alert("  cvv should be less than 4 digits" );
+          return false;
+        }
+        if(start.value=='' || start.value.length <=2){
+          alert("  month should be less than 2 digits" );
+          return false;
+        }
+        if(expiary.value=='' || expiary.value.length <=2){
+        alert("  expiary should be less than 2 digits" );
+        return false;
+        }
+        if(debit.value=='' || debit.value.length <=15){
+        alert("  debitcard should be less than 15 digits" );
+        return false;
+        }
+      
+        
+      
+      
+
+      if (mobile_number.value=='' || mobile_number.value.length !=10 ){
+          alert("Mobile number should be 10 digits")
+          mobile_number.focus();
+          return false;
+      }
+         if(address.value==''){
+          alert("address should not be empty")
+          address.focus();
+          return false;
+         }
+          if(logo.value==''){
+           alert("logo should not be empty")
+           logo.focus();
+           return false;
+          }
+          if(license.value==''){
+           alert("license should not be empty")
+           license.focus();
+           return false;
+          }
+
+          if(s_bank.value.length == "selectbank"){
+
+            alert("Please select bank:");
+            s_bank.focus();
+            return false;
+          } 
+     
+        if(c_amount.value.length <= 0){
+
+          alert("Please Enter Your amount:");
+          c_amount.focus();
+          return false;
+        }
+
+      if(d_amount.value.length <= 0){
+
+        alert("Please Enter Your amount:");
+        d_amount.focus();
+        return false;
+      }
+
+
+
+          if(d_name.value.length <= 0){
+
+            alert("Please Enter Your Cardholder Name:");
+            d_name.focus();
+            return false;
+         } 
+
+          if(c_name.value.length <= 0){
+
+            alert("Please Enter Your Cardholder Name:");
+            c_name.focus();
+            return false;
+         } 
+
+
+          if(p_password.value.length <= 0){
+
+            alert("Please Enter Your Password:");
+            p_pasword.focus();
+            return false;
+          } 
+
+
+        if(p_user.value.length <= 0){
+
+          alert("Please Enter Your username:");
+          p_user.focus();
+          return false;
+        } 
+         
+
+          else{
+             return true;
+          }
+      }
+  </script> 
+  
+
+
+  </body>
+
+</html>
